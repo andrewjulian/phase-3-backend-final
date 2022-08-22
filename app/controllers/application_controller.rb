@@ -1,7 +1,7 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
-  get "/getstudents" do
+  get "/" do
     students = Students.all.order(:name)
     students.to_json
   end
