@@ -1,21 +1,17 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
-  get "/" do
+  get "/allStudents" do
     students = Student.all.order(:name)
     students.to_json
   end
 
-  post '/students' do
-    newStudent = Student.create(
-      name: params[:name],
-      grade_level: params[:grade_level]
-    )
-    newStudent.to_json
+  get "/allAssignments" do
+    assignments = Assignment.all
+    assignments.to_json(include: :student)
   end
 
   post '/assignments' do
-    Student.all.each do |student|
       newAssignment = Assignment.create(
         student_id: student.id, 
         title: params[:title], 
