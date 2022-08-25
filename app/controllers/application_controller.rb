@@ -12,16 +12,23 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/assignments' do
-      newAssignment = Assignment.create(
-        student_id: student.id, 
-        title: params[:title], 
-        category: params[:category],
-        description: params[:description], 
-        possible_points: params[:possible_points], 
-        due_date: Date.parse(params[:due_date])
-      )
-      newAssignment.to_json
-    end
+    newAssignment = Assignment.create(
+      student_id: student.id, 
+      title: params[:title], 
+      category: params[:category],
+      description: params[:description], 
+      possible_points: params[:possible_points], 
+      due_date: Date.parse(params[:due_date])
+    )
+    newAssignment.to_json
+  end
+
+  post '/new-student' do
+    newStudent = Student.create(
+      name: params[:name],
+      grade_level: params[:grade_level]
+    )
+    newStudent.to_json
   end
 
   delete '/assignment/:id' do
@@ -29,6 +36,8 @@ class ApplicationController < Sinatra::Base
     deleteAssignment.destroy
     deleteAssignment.to_json
   end
+
+
 
   patch '/student/assignment/:id' do
     updateScore = Assignment.find(params[:id])
