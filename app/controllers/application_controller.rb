@@ -31,20 +31,12 @@ class ApplicationController < Sinatra::Base
     newStudent.to_json
   end
 
-  delete '/assignment/:id' do
+  delete '/assignments/:id' do
     deleteAssignment = Assignment.find(params[:id])
     deleteAssignment.destroy
     deleteAssignment.to_json
   end
 
 
-
-  patch '/student/assignment/:id' do
-    updateScore = Assignment.find(params[:id])
-    updateScore.update(
-      earned_points: params[:earned_points],
-    )
-    updateScore.to_json
-  end
 
 end
