@@ -13,7 +13,7 @@ class ApplicationController < Sinatra::Base
 
   post '/new-assignment' do
     newAssignment = Assignment.create(
-      student_id: params[:name], 
+      student_id: params[:studentID], 
       title: params[:title], 
       category: params[:category],
       description: params[:description], 
@@ -34,12 +34,6 @@ class ApplicationController < Sinatra::Base
 
   delete '/assignments/:id' do
     deleteAssignment = Assignment.find(params[:id])
-    deleteAssignment.destroy
-    deleteAssignment.to_json
-  end
-
-  delete '/assignments' do
-    deleteAssignment = Assignment.find(11)
     deleteAssignment.destroy
     deleteAssignment.to_json
   end
