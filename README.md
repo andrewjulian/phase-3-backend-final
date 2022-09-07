@@ -1,124 +1,110 @@
-# Phase 3 Project Guidelines
+<div id="top"></div>
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Don't forget to give the project a star!
+*** Thanks again! Now go create something AMAZING! :D
+-->
 
-## Learning Goals
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
 
-- Build a web basic API with Sinatra and Active Record to support a React
-  frontend
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+    <h3 align="center">Learning Management System MVP (Server Side) </h3>
+  </p>
+</div>
 
-## Introduction
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contributing">Contributing</a></li>
 
-Congrats on getting through all the material for Phase 3! Now's the time to put
-it all together and build something from scratch to reinforce what you know and
-expand your horizons.
+  </ol>
+</details>
 
-The focus of this project is **building a Sinatra API backend** that uses
-**Active Record** to access and persist data in a database, which will be used
-by a separate **React frontend** that interacts with the database via the API.
+<!-- ABOUT THE PROJECT -->
 
-## Requirements
+## About The Project
 
-For this project, you must:
+This project seeks to replicate a process for managing students and assignments by a teacher. The user, in this case a teacher, can add students and assignments, as well as sort through the assignments by student and class. Lastly, the teacher can and a modify the points earned for a student assignment. 
 
-- Use Active Record to interact with a database.
-- Have at least two models with a one-to-many relationship.
-- At a minimum, set up the following API routes in Sinatra:
-  - create and read actions for both models
-  - full CRUD capability for one of the models
-- Build a separate React frontend application that interacts with the API to
-  perform CRUD actions.
-- Use good OO design patterns. You should have separate classes for each of your
-  models, and create instance and class methods as necessary.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-For example, build a todo list application with a React frontend interface and a
-Sinatra backend API, where a user can:
+### Built With
 
-- **Create** a new todo
-- **Read** a list of all todos
-- **Update** an individual todo
-- **Delete** a todo
+- Ruby and Sinatra
 
-A `Todo` can be tagged with a `Category`, so that each todo _belongs to_ a
-category and each category _has many_ todos.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-## Getting Started
+<!-- USAGE EXAMPLES -->
 
-### Backend Setup
+## Usage
 
-This repository has all the starter code needed to get a Sinatra backend up and
-running. [**Fork and clone**][fork link] this repository to get started. Then, run
-`bundle install` to install the gems.
+This project has three routes for user navigation. The Home page contains information regarding the purpose and use of the other pages. The Assignments route allows the user to see current assignments based on student name or course name. The Edit route allows a user to add students and assignments to the backend database.
 
-**Important**: Be sure you fork a copy of the repo into your GitHub account
-before cloning it. You can do this by using the link above or by clicking the
-"Octocat" button at the top of this page, then clicking "Fork" in the upper
-right corner of the repo page.
+A demonstrate of this application can be found here --> shorturl.at/ow128
 
-[fork link]: https://github.com/learn-co-curriculum/phase-3-sinatra-react-project/fork
+You can run the backend API through running --> bundle exec rake server <-- in the terminal. 
 
-The `app/controllers/application_controller.rb` file has an example GET route
-handler. Replace this route with routes for your project.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-You can start your server with:
+<!-- ROADMAP -->
 
-```console
-$ bundle exec rake server
-```
+## Skills
 
-This will run your server on port
-[http://localhost:9292](http://localhost:9292).
+- [ ] Use Active Record to interact with a database.
+- [ ] Full CRUD Capabilities for Assignments Model and Database
+- [ ] Use good Object Order design patterns with instance variables for the Student Class
 
-### Frontend Setup
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-Your backend and your frontend should be in **two different repositories**.
+<!-- CONTRIBUTING -->
 
-Create a new repository in a **separate folder** with a React app for your
-frontend. To do this, `cd` out of the backend project directory, and use
-[create-react-app][] to generate the necessary code for your React frontend:
+## Contributing
 
-```console
-$ npx create-react-app my-app-frontend
-```
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-After creating the project locally, you should also
-[create a repository on GitHub][create repo] to host your repo and help
-collaborate, if you're working with a partner.
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
 
-### Fetch Example
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-Your React app should make fetch requests to your Sinatra backend! Here's an
-example:
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-```js
-fetch("http://localhost:9292/test")
-  .then((r) => r.json())
-  .then((data) => console.log(data));
-```
+# Getting Started with Create React App
 
-## Project Tips
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-- This project is intended to focus more on the backend than the frontend, so
-  try and keep the React side of things relatively simple. Focus on working with
-  Active Record and performing CRUD actions. What are some interesting queries you can write? What kinds of questions can you ask of your data?
-- Once you have a project idea, come up with a domain model and decide what
-  relationships exist between the models in your application. Use a tool like
-  [dbdiagram.io][] to help visualize your models.
-- Decide on your API endpoints. What data should they return? What kind of CRUD
-  action should they perform? What data do they need from the client?
-- Use [Postman][postman download] to test your endpoints.
-- Use `binding.pry` to debug your requests on the server. It's very helpful to use a
-  `binding.pry` in your controller within a route to see what `params` are being
-  sent.
-- Use the [Network Tab in the Dev Tools][network tab] in the frontend to debug
-  your requests.
+## Available Scripts
 
-## Resources
+In the project directory, you can run:
 
-- [create-react-app][]
-- [dbdiagram.io][]
-- [Postman][postman download]
+### `npm start`
 
-[create-react-app]: https://create-react-app.dev/docs/getting-started
-[create repo]: https://docs.github.com/en/get-started/quickstart/create-a-repo
-[dbdiagram.io]: https://dbdiagram.io/
-[postman download]: https://www.postman.com/downloads/
-[network tab]: https://developer.chrome.com/docs/devtools/network/
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
