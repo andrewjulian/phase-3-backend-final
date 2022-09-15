@@ -12,3 +12,10 @@ class CreateAssignments < ActiveRecord::Migration[6.1]
     end
   end
 end
+
+
+class add_new_item_to_db  < ActiveRecord::Migration[6.1]
+  def change
+    add_column :db_name, :column_name, :string
+  end
+end

@@ -2,13 +2,13 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
   get "/students" do
-    students = Student.allStudentsByName()
-    students.to_json
+    students = Student.all()
+    students.to_json(include: :assignments)
   end
 
-  get "/assignments" do
-    assignments = Assignment.all
-    assignments.to_json(include: :student)
+  get "/assignments" do 
+    assignments = Assignment.all()
+    assignments.to_json
   end
 
   post '/assignments' do
@@ -21,7 +21,7 @@ class ApplicationController < Sinatra::Base
       earned_points: params[:earned_points],
       due_date: Date.parse(params[:due_date])
     )
-    newAssignment.to_json(include: :student)
+    newAssignment.to_json
   end
 
   post '/students' do
@@ -29,13 +29,13 @@ class ApplicationController < Sinatra::Base
       name: params[:name],
       grade_level: params[:grade_level]
     )
-    newStudent.to_json
+    newStudent.to_json(include: :assignments)
   end
 
   delete '/assignments/:id' do
     deleteAssignment = Assignment.find(params[:id])
     deleteAssignment.destroy
-    deleteAssignment.to_json
+    deleteAssignment.to_json(include: :student)
   end
 
   patch '/assignments/:id' do
