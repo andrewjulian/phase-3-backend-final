@@ -44,7 +44,7 @@
 
 ## About The Project
 
-This project seeks to replicate a process for managing students and assignments by a teacher. The user, in this case a teacher, can add students and assignments, as well as sort through the assignments by student and class. Lastly, the teacher can and a modify the points earned for a student assignment. 
+This project seeks to replicate a process for managing students and assignments by a teacher. The user, in this case a teacher, can add students and assignments, as well as sort through the assignments by student. Lastly, the teacher can and a modify the points earned for a student assignment. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -58,9 +58,9 @@ This project seeks to replicate a process for managing students and assignments 
 
 ## Usage
 
-This project has three routes for user navigation. The Home page contains information regarding the purpose and use of the other pages. The Assignments route allows the user to see current assignments based on student name or course name. The Edit route allows a user to add students and assignments to the backend database.
+This project has three routes for user navigation. The Home page contains information regarding the purpose and use of the other pages. The Assignments route allows the user to see current assignments based on student name. The Edit route allows a user to add students and assignments to the backend database.
 
-A demonstrate of this application can be found here --> shorturl.at/ow128
+A demonstrate of this application can be found here --> https://www.loom.com/share/d699a9b594c94494a91c734dcad496f9
 
 You can run the backend API through running --> bundle exec rake server <-- in the terminal. 
 
