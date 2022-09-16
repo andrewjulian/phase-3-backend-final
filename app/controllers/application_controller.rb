@@ -34,8 +34,8 @@ class ApplicationController < Sinatra::Base
 
   delete '/assignments/:id' do
     deleteAssignment = Assignment.find(params[:id])
-    deleteAssignment.destroy
-    deleteAssignment.to_json(include: :student)
+    deleteAssignment.destroy()
+    deleteAssignment.student.to_json(include: :assignments)
   end
 
   patch '/assignments/:id' do
@@ -43,7 +43,7 @@ class ApplicationController < Sinatra::Base
     newScore.update(
       earned_points: params[:earned_points],
     )
-    newScore.to_json(include: :student)
+    newScore.student.to_json(include: :assignments)
   end
 
 end
